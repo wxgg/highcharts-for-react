@@ -1,18 +1,27 @@
 const path = require('path');
-const merge = require('webpack-merge');
-const baseWebpackConfig = require('./webpack.config.base');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const port = 8889;
 
 
-module.exports = merge(baseWebpackConfig, {
+module.exports = {
     entry: {
         app: path.join(__dirname, './test/index.js')
     },
     mode: 'development',
     devtool: "source-map",
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    },
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),//开发服务运行时的文件根目录
         historyApiFallback: true,//spa不跳转,history模式的路由需要true
@@ -28,7 +37,7 @@ module.exports = merge(baseWebpackConfig, {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({//预览时使用
-            template: path.resolve(__dirname, 'test', 'index.html'),//模板
+            template: path.resolve(__dirname, 'index.html'),//模板
             filename: 'index.html',
             inject: false, //允许插件修改哪些内容，包括head与body
             hash: true, //是否添加hash值
@@ -39,4 +48,4 @@ module.exports = merge(baseWebpackConfig, {
             chunksSortMode: 'none' //如果使用webpack4将该配置项设置为'none'
         })
     ],
-});
+};
