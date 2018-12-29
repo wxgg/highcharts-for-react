@@ -28,11 +28,10 @@ class HighchartsMapCore extends Component {
     constructor(props) {
       super(props);
       this.state = {
-      }
+      };
+      
+      this.highcharts = '';
     }
-
-    highcharts = '';
-    
     componentWillMount(){
         //console.log('beforeFristRender', 1111111111111)
         //beforrender
