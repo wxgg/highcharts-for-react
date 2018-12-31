@@ -8,6 +8,7 @@ const propTypes = {
     beforeFristRender: PropTypes.func,
     beforeRender: PropTypes.func,
 
+    style: PropTypes.object,
     className: PropTypes.string,
     string: PropTypes.object,
     options: PropTypes.object
@@ -18,7 +19,7 @@ const defaultProps = {
     afterRender: (chart) => {},
     beforeFristRender: (chart) => {},
     beforeRender: (chart) => {},
-
+    style: {},
     className: '',
     string: {},
     options: {}

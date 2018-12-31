@@ -25,8 +25,14 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
-	externals: ['react', 'react-dom'],
-
+	externals: ['react', 'react-dom', 'prop-types', "fast-deep-equal", "highcharts"],
+	
+	keywords: [
+		"chart",
+		"react",
+		"highcharts",
+		"graph"
+	],
 	module: {
 		rules: [
 			
@@ -88,7 +94,7 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new CleanWebpackPlugin(['lib']),
+		// new CleanWebpackPlugin(['lib']),
 		new MiniCssExtractPlugin({
 			filename: 'index.css',
 		})

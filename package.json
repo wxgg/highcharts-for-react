@@ -48,6 +48,14 @@
     "webpack-dev-server": "^3.1.10"
   },
   "author": "384254745@qq.com",
+  "bugs": {
+    "url": "https://github.com/wxgg/highcharts-for-react/issues"
+  },
+  "homepage": "https://github.com/wxgg/highcharts-for-react/tree/develop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wxgg/highcharts-for-react/tree/develop"
+  },
   "license": "ISC",
   "dependencies": {
     "fast-deep-equal": "^2.0.1",
