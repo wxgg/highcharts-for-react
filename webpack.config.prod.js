@@ -27,12 +27,6 @@ module.exports = {
 	},
 	externals: ['react', 'react-dom', 'prop-types', "fast-deep-equal", "highcharts"],
 	
-	keywords: [
-		"chart",
-		"react",
-		"highcharts",
-		"graph"
-	],
 	module: {
 		rules: [
 			
